@@ -1,0 +1,15 @@
+{
+    "name": "hanzl/mvc",
+    "require": {
+        "tracy/tracy": "^2.9"
+    },
+    "authors": [
+        {
+            "name": "Martin Hanzl",
+            "email": "mhanzl@memos.cz"
+        },
+        "psr-4": {
+            "Core": "/classes"
+        }
+    ]
+}
