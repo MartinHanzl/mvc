@@ -1,0 +1,1 @@
+Hello <strong>{$surname}</strong>, welcome to Smarty

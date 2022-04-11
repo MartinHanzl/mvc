@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '3c84a2000a09c92de2f1bac12e1daf13c09bb340',
+    'reference' => '20bdd4ac497f71adb62863e456dce604cfc8526b',
     'name' => 'hanzl/mvc',
   ),
   'versions' => 
@@ -41,7 +41,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '3c84a2000a09c92de2f1bac12e1daf13c09bb340',
+      'reference' => '20bdd4ac497f71adb62863e456dce604cfc8526b',
+    ),
+    'smarty/smarty' => 
+    array (
+      'pretty_version' => 'v4.1.0',
+      'version' => '4.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9e0536de18b53ba193364291ef0303b0ab9903e1',
     ),
     'tracy/tracy' => 
     array (

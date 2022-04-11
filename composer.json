@@ -1,15 +1,19 @@
 {
-    "name": "hanzl/mvc",
-    "require": {
-        "tracy/tracy": "^2.9"
-    },
-    "authors": [
-        {
-            "name": "Martin Hanzl",
-            "email": "mhanzl@memos.cz"
-        },
-        "psr-4": {
-            "Core": "/classes"
-        }
-    ]
+  "name": "hanzl/mvc",
+  "autoload": {
+    "psr-4": {
+      "Core\\": "src",
+      "App\\": "classes"
+    }
+  },
+  "authors": [
+    {
+      "name": "Martin Hanzl",
+      "email": "mhanzl@memos.cz"
+    }
+  ],
+  "require": {
+    "tracy/tracy": "^2.9",
+    "smarty/smarty": "^4.1"
+  }
 }
