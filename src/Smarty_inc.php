@@ -8,5 +8,3 @@ $smarty->setCompileDir('compile');
 $smarty->setCacheDir('cache');
 
 // $smarty->testInstall();
-$smarty->assign("surname", "tes");
-$smarty->display('index.tpl');

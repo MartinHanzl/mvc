@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Smarty;
+
 class Router
 {
 
@@ -18,6 +20,9 @@ class Router
     public function get($path, $callback)
     {
         $this->routes['get'][$path] = $callback;
+        var_dump($callback);
+        $smarty = new Smarty();
+        $smarty->display('template/index.tpl');
     }
 
     public function post($path, $callback)
@@ -59,7 +64,7 @@ class Router
     protected function layoutContent()
     {
         ob_start();
-        include_once Application::$ROOT_DIR . "/views/layouts/main.php";
+        include_once Application::$ROOT_DIR . "/views/layouts/index.php";
         return ob_get_clean();
     }
 
