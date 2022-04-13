@@ -1,1 +1,1 @@
-Hello <strong>{$surname}</strong>, welcome to Smarty
+Hello <strong>{$name}</strong>, welcome to Smarty
