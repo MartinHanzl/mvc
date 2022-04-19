@@ -6,14 +6,14 @@ require 'src/Tracy_inc.php';
 require 'src/Smarty_inc.php';
 
 use Core\App;
-use Core\Router;
+use Core\Controller;
 
 $smarty = new Smarty();
 
 $app = new App();
 
-$app->get('/', function() {
-    echo "HOME";
-});
+$app->get('/', [Controller::class, 'setLayout']);
+
+$app->get('/about', [Controller::class, 'setLayout']);
 
 $app->run();

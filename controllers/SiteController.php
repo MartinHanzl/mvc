@@ -1,7 +1,9 @@
 <?php
 
-namespace Core;
+namespace Core\Controllers;
 
-class SiteController {
+use Core\Controller;
+
+class SiteController extends Controller {
     
 }

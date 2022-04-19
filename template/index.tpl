@@ -1,1 +1,1 @@
-Hello <strong>{$name}</strong>, welcome to Smarty
+Index.tpl

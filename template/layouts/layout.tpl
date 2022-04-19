@@ -10,9 +10,16 @@
 </head>
 
 <body>
-    {$page_content}
+    <div id="main-w" class="d-flex">
+        <div id="main-nav-w" class="col-lg-2">
+            {include file="../_partials/nav.tpl"}
+        </div>
+        <div id="main-content-w" class="col-lg-10 p-3">
+            {include file="../$page_content"}
+        </div>
+    </div>
 </body>
 
-{include file="javascript.tpl"}
+{include file="../_partials/javascript.tpl"}
 
 </html>
