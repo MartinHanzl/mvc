@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-19 17:02:17
+/* Smarty version 4.1.0, created on 2022-04-19 20:13:18
   from 'D:\xampp\htdocs\mvc\template\layouts\layout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_625ecef9280db2_79289833',
+  'unifunc' => 'content_625efbbe019fe6_36394678',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '255ae23c142e04f2c003ed9dfac432699cb66a1e' => 
     array (
       0 => 'D:\\xampp\\htdocs\\mvc\\template\\layouts\\layout.tpl',
-      1 => 1650380534,
+      1 => 1650391995,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../_partials/javascript.tpl' => 1,
   ),
 ),false)) {
-function content_625ecef9280db2_79289833 (Smarty_Internal_Template $_smarty_tpl) {
+function content_625efbbe019fe6_36394678 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="cs">
 
@@ -38,11 +38,11 @@ function content_625ecef9280db2_79289833 (Smarty_Internal_Template $_smarty_tpl)
 
 <body>
     <div id="main-w" class="d-flex">
-        <div id="main-nav-w" class="col-lg-2">
+        <div id="main-nav-w" class="col-lg-2 col-md-3">
             <?php $_smarty_tpl->_subTemplateRender("file:../_partials/nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
         </div>
-        <div id="main-content-w" class="col-lg-10 p-3">
+        <div id="main-content-w" class="container col-lg-10">
             <?php $_smarty_tpl->_subTemplateRender("../".((string)$_smarty_tpl->tpl_vars['page_content']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
         </div>

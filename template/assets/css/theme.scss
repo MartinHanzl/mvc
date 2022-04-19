@@ -8,7 +8,11 @@ body {
   font-family: $fontFamily;
   padding: 0;
   margin: 0;
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
+}
+
+.container {
+  padding: $primaryPadding;
 }
 
 #main-nav-w {
@@ -30,15 +34,84 @@ body {
     font-size: 18px;
   }
   li a i {
-      margin-right: 15px;
+    margin-right: 15px;
+  }
+
+  li:hover {
+    background-color: #ff3cac;
+    background-image: linear-gradient(
+      225deg,
+      #ff3cac 0%,
+      #784ba0 50%,
+      #2b86c5 100%
+    );
   }
 
   .signed-user-div {
-      color: white;
-      text-transform: uppercase;
+    color: white;
+    text-transform: uppercase;
 
-      img {
-          border-radius: 100%;
-      }
+    img {
+      border-radius: 100%;
+    }
+  }
+}
+
+.homepage-info-block-single {
+  background-color: white;
+  border: 1px solid $secondaryGray;
+  box-shadow: $secondaryShadow;
+  border-radius: $primaryRadius;
+
+  .btn-secondary {
+    border: none;
+    transition: 1s;
+  }
+
+  .btn-secondary i {
+    margin-left: 5px;
+  }
+  .block-header {
+    border-bottom: 1px solid $secondaryGray;
+  }
+
+  table thead {
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+    color: white;
+  }
+}
+
+.homepage-info-block-single:hover .btn-secondary {
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+  width: auto;
+}
+
+.homepage-single-contact {
+  img {
+    border-radius: 100px;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    text-decoration: none;
+    color: white;
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  }
+
+  i {
+    font-size: 20px;
   }
 }

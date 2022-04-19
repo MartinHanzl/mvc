@@ -20,4 +20,9 @@ class Tools
         $res = (float) (($num1 / $num2) * 100);
         echo $res;
     }
+
+    public function getDateMonth() {
+        $month = date("F");
+        return $month;
+    }
 }

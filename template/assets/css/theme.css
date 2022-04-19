@@ -6,7 +6,11 @@ body {
   font-family: "Karla", sans-serif !important;
   padding: 0;
   margin: 0;
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
+}
+
+.container {
+  padding: 15px;
 }
 
 #main-nav-w {
@@ -30,12 +34,63 @@ body {
 #main-nav-w li a i {
   margin-right: 15px;
 }
+#main-nav-w li:hover {
+  background-color: #ff3cac;
+  background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+}
 #main-nav-w .signed-user-div {
   color: white;
   text-transform: uppercase;
 }
 #main-nav-w .signed-user-div img {
   border-radius: 100%;
+}
+
+.homepage-info-block-single {
+  background-color: white;
+  border: 1px solid #E0E0E0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 15px;
+}
+.homepage-info-block-single .btn-secondary {
+  border: none;
+  transition: 1s;
+}
+.homepage-info-block-single .btn-secondary i {
+  margin-left: 5px;
+}
+.homepage-info-block-single .block-header {
+  border-bottom: 1px solid #E0E0E0;
+}
+.homepage-info-block-single table thead {
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  color: white;
+}
+
+.homepage-info-block-single:hover .btn-secondary {
+  background-color: #ff3cac;
+  background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+  width: auto;
+}
+
+.homepage-single-contact img {
+  border-radius: 100px;
+}
+.homepage-single-contact a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  text-decoration: none;
+  color: white;
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+}
+.homepage-single-contact i {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=theme.css.map */

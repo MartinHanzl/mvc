@@ -4,6 +4,7 @@ namespace Core;
 
 use Smarty;
 use Core\App;
+use Core\Tools;
 
 class Controller
 {
@@ -18,7 +19,10 @@ class Controller
         $requestPath = $path['path'];
 
         if($requestPath == '/') {
-            $smarty->assign('page_content', 'index.tpl');
+            $smarty->assign(array(
+                'page_content' => 'index.tpl',
+                'month' => Tools::getDateMonth()
+            ));
         } else {
             $page = explode('/', $requestPath);
             $smarty->assign('page_content', $page[1] . '.tpl');
