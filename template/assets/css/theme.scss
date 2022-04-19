@@ -93,7 +93,8 @@ body {
   width: auto;
 }
 
-.homepage-single-contact {
+.homepage-single-contact,
+.homepage-single-event {
   img {
     border-radius: 100px;
   }
@@ -113,5 +114,10 @@ body {
 
   i {
     font-size: 20px;
+  }
+
+  h5 {
+    padding: 0;
+    margin: 0;
   }
 }

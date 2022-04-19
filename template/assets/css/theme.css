@@ -74,10 +74,12 @@ body {
   width: auto;
 }
 
-.homepage-single-contact img {
+.homepage-single-contact img,
+.homepage-single-event img {
   border-radius: 100px;
 }
-.homepage-single-contact a {
+.homepage-single-contact a,
+.homepage-single-event a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,8 +91,14 @@ body {
   background-color: #000000;
   background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
 }
-.homepage-single-contact i {
+.homepage-single-contact i,
+.homepage-single-event i {
   font-size: 20px;
+}
+.homepage-single-contact h5,
+.homepage-single-event h5 {
+  padding: 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=theme.css.map */
