@@ -1,1 +1,1 @@
-<link rel="stylesheet" href="../../template/assets/css/theme.css">
+<link rel="stylesheet" type="text/css" href="../../template/assets/css/theme.css">

@@ -21,8 +21,30 @@ class Tools
         echo $res;
     }
 
-    public function getDateMonth() {
+    public function getDateMonth()
+    {
         $month = date("F");
         return $month;
+    }
+
+    public function passHash($pass)
+    {
+        if (isset($pass) && !empty($pass)) {
+            $pass = password_hash($pass, PASSWORD_DEFAULT);
+            return $pass;
+        } else {
+            return false;
+        }
+    }
+
+    public function generateRandomString($length = 10)
+    {
+        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 }

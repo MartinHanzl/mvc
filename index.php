@@ -7,13 +7,13 @@ require 'src/Smarty_inc.php';
 
 use Core\App;
 use Core\Controller;
-
-$smarty = new Smarty();
+use Controllers\AuthController;
 
 $app = new App();
 
 $app->get('/', [Controller::class, 'setLayout']);
 
-$app->get('/about', [Controller::class, 'setLayout']);
+$app->get('/auth', [Controller::class, 'setLayout']);
+$app->post('/auth', [AuthController::class, 'actionRegister']);
 
 $app->run();

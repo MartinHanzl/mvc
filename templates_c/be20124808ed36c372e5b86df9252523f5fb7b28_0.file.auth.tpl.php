@@ -1,29 +1,28 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-20 16:00:09
-  from 'D:\xampp\htdocs\mvc\template\layouts\layout.tpl' */
+/* Smarty version 4.1.0, created on 2022-04-20 13:28:50
+  from 'D:\xampp\htdocs\mvc\template\layouts\auth.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_626011e94a4a67_72821712',
+  'unifunc' => 'content_625fee7221a990_49514055',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '255ae23c142e04f2c003ed9dfac432699cb66a1e' => 
+    'be20124808ed36c372e5b86df9252523f5fb7b28' => 
     array (
-      0 => 'D:\\xampp\\htdocs\\mvc\\template\\layouts\\layout.tpl',
-      1 => 1650434127,
+      0 => 'D:\\xampp\\htdocs\\mvc\\template\\layouts\\auth.tpl',
+      1 => 1650452374,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:../_partials/stylesheet.tpl' => 1,
-    'file:../_partials/nav.tpl' => 1,
     'file:../_partials/javascript.tpl' => 1,
   ),
 ),false)) {
-function content_626011e94a4a67_72821712 (Smarty_Internal_Template $_smarty_tpl) {
+function content_625fee7221a990_49514055 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="cs">
 
@@ -37,12 +36,8 @@ function content_626011e94a4a67_72821712 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 
 <body>
-    <div id="main-w" class="d-flex">
-        <div id="main-nav-w" class="col-lg-2 col-md-3">
-            <?php $_smarty_tpl->_subTemplateRender("file:../_partials/nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-        </div>
-        <div id="main-content-w" class="container col-lg-10">
+    <div id="auth-w" class="d-flex">
+        <div id="main-content-auth-w" class="container col-lg-10">
             <?php $_smarty_tpl->_subTemplateRender("../".((string)$_smarty_tpl->tpl_vars['page_content']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
         </div>

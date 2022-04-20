@@ -18,7 +18,7 @@ class Controller
         $path = parse_url($_SERVER['REQUEST_URI']);
         $requestPath = $path['path'];
 
-        if($requestPath == '/') {
+        if ($requestPath == '/') {
             $smarty->assign(array(
                 'page_content' => 'index.tpl',
                 'month' => Tools::getDateMonth()
@@ -27,10 +27,17 @@ class Controller
             $page = explode('/', $requestPath);
             $smarty->assign('page_content', $page[1] . '.tpl');
         }
-        return $smarty->display('template/layouts/layout.tpl');
+        if ($requestPath == '/auth') {
+            $page = explode('/', $requestPath);
+            $smarty->assign('page_content', $page[1] . '.tpl');
+            return $smarty->display('template/layouts/auth.tpl');
+        } else {
+            return $smarty->display('template/layouts/layout.tpl');
+        }
     }
 
-    function deleteCache() {
-        return rmdir('/templates_c');
+    public function setSession()
+    {
+        echo "HELLo";
     }
 }

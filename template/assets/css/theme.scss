@@ -2,6 +2,8 @@
 @import "../node_modules/line-awesome/dist/line-awesome/css/line-awesome.css";
 @import "../node_modules/bootstrap/dist/css/bootstrap-grid.css";
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/slick-carousel/slick/slick-theme.css";
+@import "../node_modules/slick-carousel/slick/slick.css";
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 body {
@@ -11,8 +13,14 @@ body {
   background-color: #e0e0e0;
 }
 
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm,
 .container {
   padding: $primaryPadding;
+  max-width: 1570px;
 }
 
 #main-nav-w {
@@ -20,6 +28,7 @@ body {
   background-color: #000000;
   background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
   box-shadow: $primaryShadow;
+  position: fixed;
 
   ul {
     margin: 0;
@@ -57,6 +66,23 @@ body {
   }
 }
 
+#main-content-w {
+  float: right;
+  margin-left: 16.66666667%;
+
+  .quick-link-block {
+    background-color: #ff3cac;
+    background-image: linear-gradient(
+      225deg,
+      #ff3cac 0%,
+      #784ba0 50%,
+      #2b86c5 100%
+    );
+    height: 25vh;
+    border-radius: $primaryRadius;
+  }
+}
+
 .homepage-info-block-single {
   background-color: white;
   border: 1px solid $secondaryGray;
@@ -79,6 +105,10 @@ body {
     background-color: #000000;
     background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
     color: white;
+  }
+
+  .homepage-bucketlist-board img {
+    max-width: 100%;
   }
 }
 
@@ -120,4 +150,11 @@ body {
     padding: 0;
     margin: 0;
   }
+}
+
+#auth-w {
+    background-image: url("../../../img/auth-bg.jpg");
+    background-size: cover;
+    backdrop-filter: blur(50px);
+    height: 100vh;
 }

@@ -50,12 +50,12 @@ class App
 
         if (!$callback) {
             header('HTTP/1.0 404 Not found');
-            if(!empty($this->notFoundHandler)) {
+            if (!empty($this->notFoundHandler)) {
                 $callback = $this->notFoundHandler;
             }
         } else if (is_string($callback)) {
             $parts = explode('::', $callback);
-            if(is_array($parts)) {
+            if (is_array($parts)) {
                 $className = array_shift($parts);
                 $handler = new $className;
                 $method = array_shift($parts);

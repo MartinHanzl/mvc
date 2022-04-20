@@ -11,14 +11,20 @@ class Database
 {
     public function __construct()
     {
+        $this->connect();
+    }
+
+    public function connect()
+    {
         try {
-            $pdo = new PDO("mysql:host=". DB_HOST .";dbname=" . DB_NAME ."", DB_USER, DB_PASS);
+            $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . "", DB_USER, DB_PASS);
 
             // Set the PDO error mode to exception
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             // Print host information
-            echo "Connect Successfully";
+            // echo "Connect Successfully";
+            return $pdo;
         } catch (PDOException $e) {
             die("ERROR: Could not connect. " . $e->getMessage());
         }

@@ -68,8 +68,8 @@ class Router
         ));
     }
 
-    public function run()
+    public function resolve()
     {
-        return $this->checkUrl();
+        return $this->resolve();
     }
 }

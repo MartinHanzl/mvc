@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-19 21:30:49
+/* Smarty version 4.1.0, created on 2022-04-20 16:00:09
   from 'D:\xampp\htdocs\mvc\template\homepage\left-column.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_625f0de91a4477_46418464',
+  'unifunc' => 'content_626011e9702b80_37866527',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_625f0de91a4477_46418464 (Smarty_Internal_Template $_smarty_tpl) {
+function content_626011e9702b80_37866527 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="col-lg-12 homepage-info-block-single p-3 mb-4">
     <div class="block-header p-1 mb-3">
         <h3>Příjmy a výdaje - <?php echo $_smarty_tpl->tpl_vars['month']->value;?>
