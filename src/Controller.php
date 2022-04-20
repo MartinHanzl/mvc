@@ -34,9 +34,10 @@ class Controller
         } else {
             return $smarty->display('template/layouts/layout.tpl');
         }
+        $this->checkTemplate();
     }
 
-    public function setSession()
+    public function checkTemplate()
     {
         echo "HELLo";
     }

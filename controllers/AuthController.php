@@ -13,6 +13,23 @@ class AuthController extends Controller
     {
     }
 
+    public function setSession()
+    {
+        $type = $_POST["type"];
+
+        switch ($type) {
+            case 'register':
+                self::actionRegister();
+                break;
+            case 'login':
+                self::actionLogin();
+                break;
+            case 'logout':
+
+                break;
+        }
+    }
+
     public function actionRegister()
     {
         $db = new Database;
@@ -39,7 +56,8 @@ class AuthController extends Controller
         } else {
             $password = Tools::passHash($password);
             $new_inv_no = Tools::generateRandomString();
-            
+
+            session_start();
             $_SESSION["name"] = $name . " " . $surname;
             $_SESSION["email"] = $email;
 
@@ -47,6 +65,36 @@ class AuthController extends Controller
             header("Location: /");
             exit();
         }
+    }
+
+    public function actionLogin()
+    {
+        $db = new Database;
+        $user = new User;
+        $tools = new Tools;
+
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        if (!empty($user->checkUserLogin($email, $password))) {
+            $_SESSION["name"] = "$email";
+            foreach ($user->checkUserLogin($email, $password) as $res) {
+                $_SESSION["fullname"] = $res["name"] . " " . $res["surname"];
+                $_SESSION["email"] = $res["email"];
+            }
+            header("Location: /");
+            exit();
+        } else {
+            header("Location: /auth");
+            exit();
+        }
+    }
+
+    public function actionLogout() {
+        session_unset();
+        session_destroy();
+        header("Location: /auth");
+        exit();
     }
 
     public function checkPasswords($password, $password_rep)

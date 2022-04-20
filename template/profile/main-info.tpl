@@ -1,6 +1,6 @@
 <div class="col-lg-12 profile-block-single p-3 mb-4">
     <div class="block-header p-1 mb-3">
-        <h3>Základní informace</h3>
+        <h3>Základní informace {$month}</h3>
     </div>
     <div class="mb-3 d-flex align-items-center">
         <div class="col-lg-2">

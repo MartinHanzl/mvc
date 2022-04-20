@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-20 17:30:35
+/* Smarty version 4.1.0, created on 2022-04-20 17:36:00
   from 'D:\xampp\htdocs\mvc\template\profile\main-info.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6260271b7fc3a7_94032166',
+  'unifunc' => 'content_626028604b4879_46379800',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7eefbf8b74f0d5a32650472092e436cf351cf4cc' => 
     array (
       0 => 'D:\\xampp\\htdocs\\mvc\\template\\profile\\main-info.tpl',
-      1 => 1650468632,
+      1 => 1650468957,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6260271b7fc3a7_94032166 (Smarty_Internal_Template $_smarty_tpl) {
+function content_626028604b4879_46379800 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="col-lg-12 profile-block-single p-3 mb-4">
     <div class="block-header p-1 mb-3">
-        <h3>Základní informace</h3>
+        <h3>Základní informace <?php echo $_smarty_tpl->tpl_vars['month']->value;?>
+</h3>
     </div>
     <div class="mb-3 d-flex align-items-center">
         <div class="col-lg-2">
