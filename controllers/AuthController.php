@@ -25,7 +25,7 @@ class AuthController extends Controller
                 self::actionLogin();
                 break;
             case 'logout':
-
+                self::actionLogout();
                 break;
         }
     }
@@ -79,13 +79,13 @@ class AuthController extends Controller
         if (!empty($user->checkUserLogin($email, $password))) {
             $_SESSION["name"] = "$email";
             foreach ($user->checkUserLogin($email, $password) as $res) {
-                $_SESSION["fullname"] = $res["name"] . " " . $res["surname"];
+                $_SESSION["name"] = $res["name"] . " " . $res["surname"];
                 $_SESSION["email"] = $res["email"];
             }
             header("Location: /");
             exit();
         } else {
-            header("Location: /auth");
+            header("Location: /auth?error=Neplatný email nebo heslo");
             exit();
         }
     }

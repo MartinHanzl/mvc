@@ -21,8 +21,11 @@ class Controller
         if ($requestPath == '/') {
             $smarty->assign(array(
                 'page_content' => 'index.tpl',
-                'month' => Tools::getDateMonth()
+                'month' => Tools::getDateMonth(),
+                'fullname' => $_SESSION["name"],
+                'email' => $_SESSION["email"]
             ));
+            self::setGlobalVars();
         } else {
             $page = explode('/', $requestPath);
             $smarty->assign('page_content', $page[1] . '.tpl');
@@ -34,11 +37,14 @@ class Controller
         } else {
             return $smarty->display('template/layouts/layout.tpl');
         }
-        $this->checkTemplate();
     }
 
-    public function checkTemplate()
+    public function setGlobalVars()
     {
-        echo "HELLo";
+        $smarty = new Smarty();
+        return $smarty->assign(array(
+            "fullname" => $_SESSION["email"],
+            "email" => $_SESSION["email"]
+        ));
     }
 }

@@ -61,7 +61,8 @@ class App
                 $method = array_shift($parts);
                 $callback = [$handler, $method];
             }
-        }
+        }   
+        self::checkSession();
 
         call_user_func_array($callback, array(
             array_merge($_GET, $_POST)
@@ -70,6 +71,14 @@ class App
 
     public function run()
     {
+        // self::checkSession();
         return $this->checkUrl();
+    }
+
+    public function checkSession()
+    {
+        if (empty($_SESSION["email"]) && $_SERVER["REQUEST_URI"] != '/auth') {
+            return header("Location: /auth");
+        }
     }
 }

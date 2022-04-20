@@ -11,11 +11,6 @@ use Controllers\AuthController;
 
 session_start();
 
-if(empty($_SESSION["email"])) {
-    header("Location: /auth");
-    exit();
-}
-
 $app = new App();
 
 $app->get('/', [Controller::class, 'setLayout']);
