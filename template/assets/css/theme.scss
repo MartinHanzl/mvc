@@ -153,8 +153,25 @@ body {
 }
 
 #auth-w {
-    background-image: url("../../../img/auth-bg.jpg");
-    background-size: cover;
-    backdrop-filter: blur(50px);
-    height: 100vh;
+  background-image: url("../../../img/auth-bg.jpg");
+  background-size: cover;
+  backdrop-filter: blur(50px);
+  height: 100vh;
+}
+
+#profile-w {
+  .profile-block-single {
+    background-color: white;
+    border: 1px solid $secondaryGray;
+    box-shadow: $secondaryShadow;
+    border-radius: $primaryRadius;
+
+    .block-header {
+        border-bottom: 1px solid $secondaryGray;
+    }
+
+    img {
+        max-width: 192px;
+    }
+  }
 }

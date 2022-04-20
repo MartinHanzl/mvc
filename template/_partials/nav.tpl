@@ -7,7 +7,7 @@
         </div>
         <ul>
             <li class="p-3"><a href="/"><i class="las la-home"></i><span>Domů</span></a></li>
-            <li class="p-3"><a href="#"><i class="las la-user"></i><span>Profil</span></a></li>
+            <li class="p-3"><a href="/profile"><i class="las la-user"></i><span>Profil</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-calendar"></i><span>Kalendář</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-clock"></i><span>Zápis hodin</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-running"></i><span>Aktivita</span></a></li>

@@ -16,4 +16,6 @@ $app->get('/', [Controller::class, 'setLayout']);
 $app->get('/auth', [Controller::class, 'setLayout']);
 $app->post('/auth', [AuthController::class, 'actionRegister']);
 
+$app->get('/profile', [Controller::class, 'setLayout']);
+
 $app->run();

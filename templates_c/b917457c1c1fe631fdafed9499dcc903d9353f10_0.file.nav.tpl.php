@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-20 16:00:09
+/* Smarty version 4.1.0, created on 2022-04-20 16:15:06
   from 'D:\xampp\htdocs\mvc\template\_partials\nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_626011e9624041_42370114',
+  'unifunc' => 'content_6260156a722305_88080363',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b917457c1c1fe631fdafed9499dcc903d9353f10' => 
     array (
       0 => 'D:\\xampp\\htdocs\\mvc\\template\\_partials\\nav.tpl',
-      1 => 1650381720,
+      1 => 1650464103,
       2 => 'file',
     ),
   ),
@@ -20,18 +20,18 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_626011e9624041_42370114 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6260156a722305_88080363 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_875383626011e9622c69_49068987', 'main-nav');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169667576260156a71f223_58176902', 'main-nav');
 }
 /* {block 'main-nav'} */
-class Block_875383626011e9622c69_49068987 extends Smarty_Internal_Block
+class Block_169667576260156a71f223_58176902 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main-nav' => 
   array (
-    0 => 'Block_875383626011e9622c69_49068987',
+    0 => 'Block_169667576260156a71f223_58176902',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -45,7 +45,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         </div>
         <ul>
             <li class="p-3"><a href="/"><i class="las la-home"></i><span>Domů</span></a></li>
-            <li class="p-3"><a href="#"><i class="las la-user"></i><span>Profil</span></a></li>
+            <li class="p-3"><a href="/profile"><i class="las la-user"></i><span>Profil</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-calendar"></i><span>Kalendář</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-clock"></i><span>Zápis hodin</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-running"></i><span>Aktivita</span></a></li>
