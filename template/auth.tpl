@@ -1,45 +1,45 @@
-{* <form action="/auth" method="post">
-    <input type="hidden" name="type" value="register">
-    <div class="mb-3">
-        <label class="form-label">Jméno</label>
-        <input type="text" class="form-control" name="name" required>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="auth-block col-12 col-xs-12 col-lg-3 p-5" data-bs-toggle="modal" data-bs-target="#login-modal">
+            <i class="las la-sign-in-alt"></i>
+            <p>Přihlášení</p>
+        </div>
+        <div class="auth-block col-12 col-xs-12 col-lg-3 p-5" data-bs-toggle="modal" data-bs-target="#register-modal">
+            <i class="las la-user-plus"></i>
+            <p>Registrace</p>
+        </div>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Příjmení</label>
-        <input type="text" class="form-control" name="surname" required>
+    {* {block name="register-form"}
+        {include file="../template/auth/register-form.tpl"}
+    {/block}*}
+    <div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="login-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="login-modalLabel">Přihlášení</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {block name="login-form"}
+                        {include file="../template/auth/login-form.tpl"}
+                    {/block}
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Emailová adresa</label>
-        <input type="email" class="form-control" name="email">
+    <div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="register-modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="register-modalLabel">Registrace</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {block name="register-form"}
+                        {include file="../template/auth/register-form.tpl"}
+                    {/block}
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Heslo</label>
-        <input type="password" class="form-control" name="password">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Heslo znovu</label>
-        <input type="password" class="form-control" name="password_rep">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Osobní VPA číslo</label>
-        <input type="text" class="form-control" name="vpa_no">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Kód pozvánky</label>
-        <input type="text" class="form-control" name="invitation_no">
-    </div>
-    <button type="submit" class="btn btn-primary">Registrace</button>
-</form> *}
-
-<form action="/auth" method="post">
-    <input type="hidden" name="type" value="login">
-    <div class="mb-3">
-        <label class="form-label">Emailová adresa</label>
-        <input type="email" class="form-control" name="email">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Heslo</label>
-        <input type="password" class="form-control" name="password">
-    </div>
-    <button type="submit" class="btn btn-primary">Přihlášení</button>
-</form>
+</div>

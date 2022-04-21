@@ -77,8 +77,11 @@ class App
 
     public function checkSession()
     {
-        if (empty($_SESSION["email"]) && $_SERVER["REQUEST_URI"] != '/auth') {
+        $requestUri = $_SERVER["REQUEST_URI"];
+        if (empty($_SESSION["email"]) && $requestUri != '/auth') {
             return header("Location: /auth");
+        } else if (!empty($_SESSION["email"]) && $requestUri == "/auth") {
+            return header("Location: /");
         }
     }
 }

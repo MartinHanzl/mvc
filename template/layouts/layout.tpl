@@ -11,10 +11,13 @@
 
 <body>
     <div id="main-w" class="d-flex">
-        <div id="main-nav-w" class="col-lg-2 col-md-3">
+        <div id="main-nav-w" class="col-xs-12 col-lg-2 col-md-12 col-12 nav-hidden">
+            <div class="mobile-nav-toggle d-flex justify-content-center p-3 align-items-center hidden-md">
+                <i id="mobile-nav-toggle" class="las la-angle-up"></i>
+            </div>
             {include file="../_partials/nav.tpl"}
         </div>
-        <div id="main-content-w" class="container col-lg-10">
+        <div id="main-content-w" class="container col-xs-12 col-lg-10 col-12 ">
             {include file="../$page_content"}
         </div>
     </div>

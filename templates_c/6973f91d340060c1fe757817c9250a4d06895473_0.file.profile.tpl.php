@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-20 16:27:13
+/* Smarty version 4.1.0, created on 2022-04-20 21:25:58
   from 'D:\xampp\htdocs\mvc\template\profile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_626018416029b6_28758407',
+  'unifunc' => 'content_62605e46ad8d46_15723525',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,14 +21,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:template/profile/main-info.tpl' => 1,
   ),
 ),false)) {
-function content_626018416029b6_28758407 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62605e46ad8d46_15723525 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
 <div id="profile-w">
     <div class="d-flex col-lg-12">
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1119494144626018415fc878_03585419', 'main-info');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_140602322562605e46ad80c1_93618610', 'main-info');
 ?>
 
     </div>
@@ -36,12 +36,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_111949414462601841
 
 <?php }
 /* {block 'main-info'} */
-class Block_1119494144626018415fc878_03585419 extends Smarty_Internal_Block
+class Block_140602322562605e46ad80c1_93618610 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main-info' => 
   array (
-    0 => 'Block_1119494144626018415fc878_03585419',
+    0 => 'Block_140602322562605e46ad80c1_93618610',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
