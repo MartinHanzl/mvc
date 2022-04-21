@@ -207,4 +207,14 @@ body {
   margin-top: 2rem;
 }
 
+#contacts-w .block-functions-single {
+  border-radius: 15px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  text-align: center;
+  color: white;
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=theme.css.map */

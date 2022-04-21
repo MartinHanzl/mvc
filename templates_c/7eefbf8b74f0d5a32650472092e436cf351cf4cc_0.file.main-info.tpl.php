@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-20 21:25:58
+/* Smarty version 4.1.0, created on 2022-04-21 15:44:24
   from 'D:\xampp\htdocs\mvc\template\profile\main-info.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_62605e46b36de1_01293313',
+  'unifunc' => 'content_62615fb853d9a7_20520610',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62605e46b36de1_01293313 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62615fb853d9a7_20520610 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="col-lg-12 profile-block-single p-3 mb-4">
     <div class="block-header p-1 mb-3">
         <h3>Základní informace <?php echo $_smarty_tpl->tpl_vars['month']->value;?>
