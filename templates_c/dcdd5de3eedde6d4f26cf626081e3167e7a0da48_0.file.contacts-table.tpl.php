@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-22 11:46:21
+/* Smarty version 4.1.0, created on 2022-04-22 12:15:35
   from 'D:\xampp\htdocs\mvc\template\contacts\contacts-table.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6262796df1d1c8_79328000',
+  'unifunc' => 'content_62628047bc6244_78830857',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dcdd5de3eedde6d4f26cf626081e3167e7a0da48' => 
     array (
       0 => 'D:\\xampp\\htdocs\\mvc\\template\\contacts\\contacts-table.tpl',
-      1 => 1650620776,
+      1 => 1650622532,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6262796df1d1c8_79328000 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62628047bc6244_78830857 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="col-12 p-3">
     <table class="table table-hover" id="contact-table">
         <thead>
@@ -30,7 +30,8 @@ function content_6262796df1d1c8_79328000 (Smarty_Internal_Template $_smarty_tpl)
                 <th scope="col">Příjmení</th>
                 <th scope="col">Telefon</th>
                 <th scope="col">Email</th>
-                                <th scope="col">Co dělá</th>
+                <th scope="col">Skupina</th>
+                <th scope="col">Co dělá</th>
                 <th scope="col">Kam míří</th>
                 <th scope="col">Co dělá navíc</th>
             </tr>
@@ -56,7 +57,11 @@ $_smarty_tpl->tpl_vars['contact']->do_else = false;
                         <td><a href="mailto:<?php echo $_smarty_tpl->tpl_vars['contact']->value['email'];?>
 " target="_blank"><?php echo $_smarty_tpl->tpl_vars['contact']->value['email'];?>
 </a></td>
-                                                <td><?php echo $_smarty_tpl->tpl_vars['contact']->value['now'];?>
+                        <td><span class="badge"
+                                style="background-color: <?php echo $_smarty_tpl->tpl_vars['contact']->value['category_color'];?>
+;"><?php echo $_smarty_tpl->tpl_vars['contact']->value['category_name'];?>
+</span></td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['contact']->value['now'];?>
 </td>
                         <td><?php echo $_smarty_tpl->tpl_vars['contact']->value['goal'];?>
 </td>

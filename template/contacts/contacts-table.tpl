@@ -7,7 +7,7 @@
                 <th scope="col">Příjmení</th>
                 <th scope="col">Telefon</th>
                 <th scope="col">Email</th>
-                {* <th scope="col">Skupina</th> *}
+                <th scope="col">Skupina</th>
                 <th scope="col">Co dělá</th>
                 <th scope="col">Kam míří</th>
                 <th scope="col">Co dělá navíc</th>
@@ -22,7 +22,8 @@
                         <td>{$contact.surname}</td>
                         <td><a href="tel:000{$contact.phone}" target="_blank">{$contact.phone}</a></td>
                         <td><a href="mailto:{$contact.email}" target="_blank">{$contact.email}</a></td>
-                        {* <td>xxx</td> *}
+                        <td><span class="badge"
+                                style="background-color: {$contact.category_color};">{$contact.category_name}</span></td>
                         <td>{$contact.now}</td>
                         <td>{$contact.goal}</td>
                         <td>{$contact.do}</td>

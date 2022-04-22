@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-04-22 11:51:29
+/* Smarty version 4.1.0, created on 2022-04-22 12:12:59
   from 'D:\xampp\htdocs\mvc\template\contacts\contacts-modal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_62627aa1ee13d9_89246712',
+  'unifunc' => 'content_62627fab7a0fd8_08228778',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cfaaa1ed797343e87ffbef3c4098151c9661c076' => 
     array (
       0 => 'D:\\xampp\\htdocs\\mvc\\template\\contacts\\contacts-modal.tpl',
-      1 => 1650621056,
+      1 => 1650622349,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62627aa1ee13d9_89246712 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62627fab7a0fd8_08228778 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="modal fade" id="contact-add-modal" tabindex="-1" aria-labelledby="contact-add-modalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -106,6 +106,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <div class="col-md-12">
                         <label for="inputName" class="form-label">Název skupiny</label>
                         <input type="text" name="title" class="form-control" id="inputName">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="inputName" class="form-label">Barevné označení</label>
+                        <input type="color" name="color" class="form-control" id="inputName">
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Přidat skupinu</button>

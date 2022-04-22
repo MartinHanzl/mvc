@@ -75,6 +75,10 @@
                         <label for="inputName" class="form-label">Název skupiny</label>
                         <input type="text" name="title" class="form-control" id="inputName">
                     </div>
+                    <div class="col-md-12">
+                        <label for="inputName" class="form-label">Barevné označení</label>
+                        <input type="color" name="color" class="form-control" id="inputName">
+                    </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Přidat skupinu</button>
                     </div>

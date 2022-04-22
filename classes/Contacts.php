@@ -38,7 +38,7 @@ class Contacts
     {
         $db = new Database();
 
-        $sql = $db->connect()->prepare("SELECT * FROM contacts_info RIGHT JOIN contacts_goals ON contacts_goals.contacts_info_id_contact_info = contacts_info.id_contacts_info WHERE contacts_info.users_id_users = ?");
+        $sql = $db->connect()->prepare("SELECT * FROM contacts_info RIGHT JOIN contacts_goals ON contacts_goals.contacts_info_id_contact_info = contacts_info.id_contacts_info RIGHT JOIN contacts_category ON contacts_category.id_contacts_category = contacts_info.contacts_category_id_contacts_category WHERE contacts_info.users_id_users = ?");
         $sql->execute(array($uid));
 
         if ($sql->rowCount() > 0) {
@@ -97,11 +97,11 @@ class Contacts
      *
      * @param  mixed $title
      */
-    public function insertGroup($title, $uid) {
+    public function insertGroup($title, $color, $uid) {
         $db = new Database();
-        $sql = $db->connect()->prepare("INSERT INTO contacts_category (category_name, users_id_users) VALUES (?, ?)");
+        $sql = $db->connect()->prepare("INSERT INTO contacts_category (category_name, category_color, users_id_users) VALUES (?, ?, ?)");
 
-        if($sql->execute(array($title, $uid))) {
+        if($sql->execute(array($title, $color, $uid))) {
             $result = true;
         } else {
             $result = false;

@@ -47,7 +47,7 @@ class ContactsController extends Controller
         $name = self::validateName($_POST["name"]);
         $surname = self::validateName($_POST["surname"]);
         $phone = $_POST["phone"];
-        $email = $_POST["surname"];
+        $email = $_POST["email"];
         $uid = $_SESSION["uid"];
         $now = $_POST["now"];
         $goal = $_POST["goal"];
@@ -74,9 +74,10 @@ class ContactsController extends Controller
     {
         $contact = new Contacts;
         $title = $_POST["title"];
+        $color = $_POST["color"];
         $uid = $_SESSION["uid"];
 
-        if ($contact->insertGroup($title, $uid) == true) {
+        if ($contact->insertGroup($title, $color, $uid) == true) {
             header("Location: /contacts");
             exit();
         } else {
