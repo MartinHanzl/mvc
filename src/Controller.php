@@ -4,6 +4,8 @@ namespace Core;
 
 use Smarty;
 use Core\Tools;
+use Controllers\ContactsController;
+use Models\Contacts;
 
 class Controller
 {
@@ -17,35 +19,16 @@ class Controller
         $path = parse_url($_SERVER['REQUEST_URI']);
         $requestPath = $path['path'];
 
-        /* if ($requestPath == '/') {
-            $smarty->assign(array(
-                'page_content' => 'index.tpl',
-                'month' => Tools::getDateMonth(),
-                'fullname' => $_SESSION["name"],
-                'email' => $_SESSION["email"],
-                'uid' => $_SESSION["uid"]
-            ));
-        } else {
-            $page = explode('/', $requestPath);
-        $smarty->assign('page_content', $page[1] . '.tpl');
-        } */
-
         self::checkLayout($requestPath);
-
-        /* if ($requestPath == '/auth') {
-            $page = explode('/', $requestPath);
-            $smarty->assign('page_content', $page[1] . '.tpl');
-            return $smarty->display('template/layouts/auth.tpl');
-        } else {
-            return $smarty->display('template/layouts/layout.tpl');
-        } */
     }
 
     public function checkLayout($path)
     {
         $smarty = new Smarty();
+        $contacts = new ContactsController();
+
         if ($path == '/auth') {
-            $smarty->assign('page_content', $path[1] . '.tpl');
+            $smarty->assign('page_content', 'auth.tpl');
             return $smarty->display('template/layouts/auth.tpl');
         } else {
             if ($path == "/") {
@@ -53,14 +36,12 @@ class Controller
             } else {
                 $path = explode('/', $path);
                 $smarty->assign('page_content', $path[1] . '.tpl');
+                // $smarty->assign($path[1], $contacts->setContactVars());
+                $smarty->assign('contacts', self::setTemplateVars($path[1]));
             }
             $smarty->assign('global', self::setProjectVars());
             return $smarty->display('template/layouts/layout.tpl');
         }
-    }
-
-    public function setVars($handler)
-    {
     }
 
     public function setProjectVars()
@@ -72,5 +53,26 @@ class Controller
             'uid' => $_SESSION["uid"]
         );
         return $vars;
+    }
+
+    public function setTemplateVars($path)
+    {
+        $smarty = new Smarty();
+        switch ($path) {
+            case 'contacts':
+                $contacts = new ContactsController;
+                $result = $contacts->setContactVars();
+                break;
+        }
+
+        return $result;
+    }
+
+    public function validateName($name)
+    {
+        $name = filter_var($name, FILTER_DEFAULT);
+        // $pattern = "[A-Za-z]";
+        // $result = preg_match($pattern, $name);
+        return $name;
     }
 }

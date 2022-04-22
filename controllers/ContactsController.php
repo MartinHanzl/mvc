@@ -4,12 +4,25 @@ namespace Controllers;
 
 use Smarty;
 use Core\Controller;
+use Core\Database;
 use Models\Contacts;
+use Core\Tools;
 
 class ContactsController extends Controller
 {
     public function __construct()
     {
+    }
+
+    public function setContactVars()
+    {
+        $contacts = new Contacts();
+        $vars = array(
+            'contacts' => $contacts->selectAllContacts($_SESSION['uid']),
+            'groups' => $contacts->selectAllGroups($_SESSION['uid'])
+        );
+
+        return $vars;
     }
 
     public function sanitizeRequest()
@@ -21,6 +34,9 @@ class ContactsController extends Controller
             case 'add':
                 self::addContact();
                 break;
+            case 'group':
+                self::addGroup();
+                break;
         }
     }
 
@@ -28,24 +44,43 @@ class ContactsController extends Controller
     {
         $contact = new Contacts;
 
-        $name = $_POST["name"];
-        $surname = $_POST["surname"];
+        $name = self::validateName($_POST["name"]);
+        $surname = self::validateName($_POST["surname"]);
         $phone = $_POST["phone"];
-        $email = $_POST["email"];
+        $email = $_POST["surname"];
         $uid = $_SESSION["uid"];
+        $now = $_POST["now"];
+        $goal = $_POST["goal"];
+        $do = $_POST["do"];
+        $group = $_POST["group"];
 
-        if ($contact->addContact($name, $surname, $phone, $email, $uid) == true) {
-            header("Location: /contacts");
-            exit();
+        if ($contact->addContact($name, $surname, $phone, $email, $uid, $group) == true) {
+            $id = $contact->selectContactId($email);
+            foreach ($id as $i) {
+                $cId = $i["id_contacts_info"];
+            }
+            if ($contact->insertContactGoal($now, $goal, $do, $cId) == true) {
+                header("Location: /contacts");
+                exit();
+            } else {
+                echo "ERROR";
+            }
         } else {
             echo "ERROR";
         }
     }
 
-    public function renderContacts() {
-        $smarty = new Smarty;
-        $contacts = new Contacts;
+    public function addGroup()
+    {
+        $contact = new Contacts;
+        $title = $_POST["title"];
+        $uid = $_SESSION["uid"];
 
-        $smarty->assign('contacts', $contacts->selectAllContacts($_SESSION["uid"]));
+        if ($contact->insertGroup($title, $uid) == true) {
+            header("Location: /contacts");
+            exit();
+        } else {
+            echo "error";
+        }
     }
 }
