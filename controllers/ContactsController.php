@@ -37,6 +37,9 @@ class ContactsController extends Controller
             case 'group':
                 self::addGroup();
                 break;
+            case 'edit-group':
+                self::updateGroup();
+                break;
         }
     }
 
@@ -82,6 +85,28 @@ class ContactsController extends Controller
             exit();
         } else {
             echo "error";
+        }
+    }
+
+    public function updateGroup()
+    {
+        $title = $_POST["title"];
+        $color = $_POST["color"];
+        $groupId = $_POST["groupId"];
+        $uid = $uid = $_SESSION["uid"];
+
+        $contact = new Contacts;
+
+        if (isset($_POST["group-save"])) {
+            if ($contact->updateGroup($title, $color, $uid, $groupId) == true) {
+                header("Location: /contacts");
+                exit();
+            }
+        } else if (isset($_POST["group-delete"])) {
+            if ($contact->removeGroup($groupId, $uid) == true) {
+                header("Location: /contacts");
+                exit();
+            }
         }
     }
 }

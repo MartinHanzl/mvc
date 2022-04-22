@@ -3,6 +3,8 @@
         {block name='functions'}
             {include file="template/contacts/functions.tpl"}
             {include file="template/contacts/contacts-modal.tpl"}
+            {include file="template/contacts/groups-modal.tpl"}
+            {include file="template/contacts/group-add-modal.tpl"}
         {/block}
     </div>
     <div class="d-flex col-lg-12 col-12 block-single">

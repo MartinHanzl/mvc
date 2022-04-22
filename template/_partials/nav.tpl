@@ -9,11 +9,11 @@
         <ul>
             <li class="p-3"><a href="/"><i class="las la-home"></i><span>Domů</span></a></li>
             <li class="p-3"><a href="/profile"><i class="las la-user"></i><span>Profil</span></a></li>
+            <li class="p-3"><a href="/contacts"><i class="las la-phone"></i><span>Seznam kontaktů</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-calendar"></i><span>Kalendář</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-clock"></i><span>Zápis hodin</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-running"></i><span>Aktivita</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-coins"></i><span>Příjmy a výdaje</span></a></li>
-            <li class="p-3"><a href="/contacts"><i class="las la-phone"></i><span>Seznam kontaktů</span></a></li>
             <li class="p-3"><a href="#"><i class="las la-image"></i><span>Nástěnka</span></a></li>
             {* <li class="p-3"><a href="#"><i class="las la-chess-knight"></i><span>Minihry</span></a></li> *}
             <li class="p-3"><a href="#"><i class="las la-pencil-ruler"></i><span>Užitečné funkce</span></a></li>

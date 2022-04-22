@@ -5,7 +5,7 @@
 </div>
 
 <div class="block-functions-single col-lg-3 col-xs-4 col-12 p-3 m-3" data-bs-toggle="modal"
-    data-bs-target="#contact-add-modal">
+    data-bs-target="#groups-modal">
     <i class="las la-edit"></i>
     <span>Editace skupin</span>
 </div>
