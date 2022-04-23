@@ -5,6 +5,7 @@ namespace Core;
 use Smarty;
 use Core\Tools;
 use Controllers\ContactsController;
+use Controllers\HomepageController;
 use Models\Contacts;
 
 class Controller
@@ -26,6 +27,7 @@ class Controller
     {
         $smarty = new Smarty();
         $contacts = new ContactsController();
+        $home = new HomepageController();
 
         if ($path == '/auth') {
             $smarty->assign('page_content', 'auth.tpl');
@@ -33,6 +35,7 @@ class Controller
         } else {
             if ($path == "/") {
                 $smarty->assign('page_content', 'index.tpl');
+                $smarty->assign('home', self::setHomepageVars());
             } else {
                 $path = explode('/', $path);
                 $smarty->assign('page_content', $path[1] . '.tpl');
@@ -66,6 +69,18 @@ class Controller
         }
 
         return $result;
+    }
+
+    public function setHomepageVars()
+    {
+        $contact = new Contacts;
+
+        $limit = 1;
+        $vars = array(
+            'contact' => $contact->selectAllContacts($_SESSION['uid'], 5)
+        );
+
+        return $vars;
     }
 
     public function validateName($name)

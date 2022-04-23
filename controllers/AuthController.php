@@ -83,7 +83,7 @@ class AuthController extends Controller
                 $_SESSION["email"] = $res["email"];
                 $_SESSION["uid"] = $res["id_users"];
             }
-            header("Location: /");
+            header("Location: /?info=Přihlášení proběhlo úspěšně");
             exit();
         } else {
             header("Location: /auth?error=Neplatný email nebo heslo");

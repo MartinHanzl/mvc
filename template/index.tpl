@@ -6,6 +6,7 @@
     {/block}
     {block name='right-column'}
         <div class="right-column d-flex flex-column col-xs-12 col-md-6 col-lg-6 col-12 p-3">
+            {include file="template/homepage/contacts-table.tpl"}
             {include file="template/homepage/right-column.tpl"}
         </div>
     {/block}

@@ -8,4 +8,19 @@ $(document).ready(function () {
       $("#main-nav-w").addClass("nav-hidden");
     }
   });
+
+  var exampleModal = document.getElementById("contact-update-modal");
+  exampleModal.addEventListener("show.bs.modal", function (event) {
+    var button = event.relatedTarget;
+
+
+    $(".updId").val(button.getAttribute("data-contact-id"));
+    $(".updName").val(button.getAttribute("data-contact-name"));
+    $(".updSurname").val(button.getAttribute("data-contact-surname"));
+    $(".updEmail").val(button.getAttribute("data-contact-email"));
+    $(".updPhone").val(button.getAttribute("data-contact-phone"));
+    $(".updNow").val(button.getAttribute("data-contact-now"));
+    $(".updGoal").val(button.getAttribute("data-contact-goal"));
+    $(".updDo").val(button.getAttribute("data-contact-do"));
+  });
 });

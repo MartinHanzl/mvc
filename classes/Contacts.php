@@ -34,11 +34,33 @@ class Contacts
         return $result;
     }
 
-    public function selectAllContacts($uid)
+    public function selectAllContacts($uid, $limit = null)
     {
         $db = new Database();
 
-        $sql = $db->connect()->prepare("SELECT * FROM contacts_info RIGHT JOIN contacts_goals ON contacts_goals.contacts_info_id_contact_info = contacts_info.id_contacts_info RIGHT JOIN contacts_category ON contacts_category.id_contacts_category = contacts_info.contacts_category_id_contacts_category WHERE contacts_info.users_id_users = ?");
+        if (!empty($limit)) {
+            $sql = $db->connect()->prepare("SELECT * FROM contacts_info RIGHT JOIN contacts_goals ON contacts_goals.contacts_info_id_contact_info = contacts_info.id_contacts_info RIGHT JOIN contacts_category ON contacts_category.id_contacts_category = contacts_info.contacts_category_id_contacts_category WHERE contacts_info.users_id_users = ? LIMIT $limit");
+            $sql->execute(array($uid));
+        } else {
+            $sql = $db->connect()->prepare("SELECT * FROM contacts_info RIGHT JOIN contacts_goals ON contacts_goals.contacts_info_id_contact_info = contacts_info.id_contacts_info RIGHT JOIN contacts_category ON contacts_category.id_contacts_category = contacts_info.contacts_category_id_contacts_category WHERE contacts_info.users_id_users = ?");
+            $sql->execute(array($uid));
+        }
+
+        if ($sql->rowCount() > 0) {
+            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            $result = false;
+        }
+
+        return $result;
+    }
+
+    public function selectNumberContacts($uid)
+    {
+        $db = new Database;
+
+        $sql = $db->connect()->prepare("SELECT COUNT(*) numberOfContact FROM contacts_info WHERE users_id_users = ?");
+
         $sql->execute(array($uid));
 
         if ($sql->rowCount() > 0) {
@@ -47,6 +69,93 @@ class Contacts
             $result = false;
         }
 
+        return $result;
+    }
+
+    public function selectNow($uid)
+    {
+        $db = new Database;
+
+        $sql = $db->connect()->prepare("SELECT COUNT(now) number FROM contacts_goals LEFT JOIN contacts_info ON contacts_info.id_contacts_info = contacts_goals.contacts_info_id_contact_info WHERE now != '' AND contacts_info.users_id_users = ?");
+
+        $sql->execute(array($uid));
+
+        if ($sql->rowCount() > 0) {
+            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            $result = false;
+        }
+
+        return $result;
+    }
+
+    public function selectGoal($uid)
+    {
+        $db = new Database;
+
+        $sql = $db->connect()->prepare("SELECT COUNT(goal) goalNumber FROM contacts_goals LEFT JOIN contacts_info ON contacts_info.id_contacts_info = contacts_goals.contacts_info_id_contact_info WHERE goal != '' AND contacts_info.users_id_users = ?");
+
+        $sql->execute(array($uid));
+
+        if ($sql->rowCount() > 0) {
+            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            $result = false;
+        }
+
+        return $result;
+    }
+
+    public function selectDo($uid)
+    {
+        $db = new Database;
+
+        $sql = $db->connect()->prepare("SELECT COUNT(do) doNumber FROM contacts_goals LEFT JOIN contacts_info ON contacts_info.id_contacts_info = contacts_goals.contacts_info_id_contact_info WHERE do != '' AND contacts_info.users_id_users = ?");
+
+        $sql->execute(array($uid));
+
+        if ($sql->rowCount() > 0) {
+            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            $result = false;
+        }
+
+        return $result;
+    }
+
+    public function updateContact($cid, $name, $surname, $phone, $email, $now, $goal, $do)
+    {
+        $db = new Database;
+
+        $sql = $db->connect()->prepare("UPDATE contacts_info SET name=?, surname=?, phone=?, email=? WHERE id_contacts_info=?");
+        if ($sql->execute(array($name, $surname, $phone, $email, $cid))) {
+            $upd = $db->connect()->prepare("UPDATE contacts_goals SET now=?, goal=?, do=? WHERE contacts_info_id_contact_info=?");
+            if ($upd->execute(array($now, $goal, $do, $cid))) {
+                $result = true;
+            } else {
+                $result = false;
+            }
+        } else {
+            $result = false;
+        }
+
+        return $result;
+    }
+
+    public function deleteContact($cid, $uid)
+    {
+        $db = new Database;
+
+        $sqlGoal = $db->connect()->prepare("DELETE FROM contacts_goals WHERE contacts_info_id_contact_info = ?");
+        if ($sqlGoal->execute(array($cid))) {
+            $sql = $db->connect()->prepare("DELETE FROM contacts_info WHERE id_contacts_info = ? AND users_id_users = ?");
+
+            if ($sql->execute(array($cid, $uid))) {
+                $result = true;
+            } else {
+                $result = false;
+            }
+        }
         return $result;
     }
 
